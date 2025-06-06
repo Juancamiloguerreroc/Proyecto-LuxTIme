@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GMT-Master II - LuxTime</title>
+    <link rel="stylesheet" href="../css/product-detail.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">LuxTime</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="contact.html">Contact</a>
+            <a href="catalogo-relojes.html">Catalog</a>
+        </nav>
+    </header>
+
+    <div class="product-container">
+        <div class="product-image">
+            <img src="../src/GMT-Master II.png" alt="GMT-Master II" class="main-image" id="mainImage">
+        </div>
+
+        <div class="product-info">
+            <h1>GMT-Master II</h1>
+            <div class="product-price">$10,700 USD</div>
+            <p class="product-description">
+                Crafted for global explorers, the GMT-Master II allows tracking of two time zones simultaneously with elegance and precision. Its bold, dual-tone rotating bezel makes it the ideal companion for those who live between destinations.
+            </p>
+
+            <div class="tech-specs">
+                <h3>Technical Specifications</h3>
+                <div class="specs-grid">
+                    <div class="spec-item">
+                        <span class="spec-label">Case Material:</span>
+                        <span class="spec-value">Oystersteel</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Case Diameter:</span>
+                        <span class="spec-value">40mm</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Water Resistance:</span>
+                        <span class="spec-value">100m</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Movement:</span>
+                        <span class="spec-value">Calibre 3285</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Power Reserve:</span>
+                        <span class="spec-value">70 hours</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Weight:</span>
+                        <span class="spec-value">140g</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="customization">
+                <h3>Personalization Options</h3>
+                
+                <div class="custom-option">
+                    <label for="engraving">Engraving Text:</label>
+                    <input type="text" id="engraving" class="custom-select" placeholder="Enter personalized text (optional)" maxlength="20">
+                </div>
+
+                <div class="custom-option">
+                    <label>Bracelet Type:</label>
+                    <div class="strap-options">
+                        <div class="strap-option active" data-strap="oyster">Oyster</div>
+                        <div class="strap-option" data-strap="jubilee">Jubilee</div>
+                        <div class="strap-option" data-strap="leather">Leather</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="buy-section">
+                <button class="buy-btn">
+                    <i class="fas fa-credit-card"></i>
+                    Buy Now
+                </button>
+                <button class="cart-btn">
+                    <i class="fas fa-shopping-cart"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="related-products">
+        <h3>Related Products</h3>
+        <div class="products-carousel">
+            <div class="product-card" onclick="window.location.href='daytona.html'">
+                <img src="../src/golden-daytona.png" alt="Daytona">
+                <h4>Daytona</h4>
+                <p class="price">$15,100 USD</p>
+            </div>
+            <div class="product-card" onclick="window.location.href='submariner.html'">
+                <img src="../src/Rolex-submariner.png" alt="Submariner">
+                <h4>Submariner</h4>
+                <p class="price">$9,000 USD</p>
+            </div>
+            <div class="product-card" onclick="window.location.href='sky-dweller.html'">
+                <img src="../src/Sky-Dweller.png" alt="Sky-Dweller">
+                <h4>Sky-Dweller</h4>
+                <p class="price">$15,000 USD</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Funcionalidad para cambiar correas
+        document.querySelectorAll('.strap-option').forEach(option => {
+            option.addEventListener('click', function() {
+                document.querySelectorAll('.strap-option').forEach(o => o.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Efecto zoom en imagen
+        document.getElementById('mainImage').addEventListener('click', function() {
+            this.style.transform = this.style.transform === 'scale(1.5)' ? 'scale(1)' : 'scale(1.5)';
+        });
+    </script>
+</body>
+</html>

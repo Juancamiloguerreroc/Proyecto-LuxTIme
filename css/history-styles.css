@@ -1,0 +1,398 @@
+/* Variables de colores del tema original */
+:root {
+    --rolex-green: #00563B;
+    --rolex-green-light: #006B47;
+    --beige: #F5F5DC;
+    --beige-dark: #E8E8D0;
+    --dark-text: #2C2C2C;
+    --light-text: #FFFFFF;
+    --bg-color: #95bbb2;
+}
+
+/* Estilos base */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background-color: var(--bg-color);
+    line-height: 1.6;
+}
+
+/* Header (manteniendo estilo original) */
+header {
+    width: 1140px;
+    max-width: 90%;
+    margin: auto;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 100;
+    padding: 2rem 0;
+}
+
+header .logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: var(--dark-text);
+}
+
+header nav a {
+    margin-left: 2rem;
+    text-decoration: none;
+    color: var(--dark-text);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+header nav a:hover {
+    color: var(--rolex-green);
+}
+
+/* Sección Hero */
+.hero-section {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, var(--beige) 0%, var(--beige-dark) 100%);
+    margin: 2rem 0 4rem 0;
+}
+
+.hero-section h1 {
+    font-size: 4rem;
+    color: var(--rolex-green);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.hero-section p {
+    font-size: 1.3rem;
+    color: var(--dark-text);
+    font-weight: 300;
+}
+
+/* Timeline Section */
+.timeline-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+.timeline-section h2 {
+    text-align: center;
+    font-size: 3rem;
+    color: var(--dark-text);
+    margin-bottom: 4rem;
+    font-weight: 700;
+}
+
+.timeline-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Línea central de la timeline */
+.timeline-container::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(to bottom, var(--rolex-green), var(--rolex-green-light));
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+/* Timeline Item */
+.timeline-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Ocultar inputs radio */
+.timeline-item input[type="radio"] {
+    display: none;
+}
+
+/* Timeline Marker */
+.timeline-marker {
+    position: relative;
+    z-index: 2;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--beige), var(--beige-dark));
+    border: 4px solid var(--rolex-green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    box-shadow: 0 8px 25px rgba(0, 86, 59, 0.2);
+}
+
+.timeline-marker:hover {
+    transform: scale(1.1);
+    box-shadow: 0 12px 35px rgba(0, 86, 59, 0.3);
+    border-color: var(--rolex-green-light);
+}
+
+.timeline-marker .year {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--rolex-green);
+}
+
+/* Timeline Content */
+.timeline-content {
+    position: absolute;
+    width: 400px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+    pointer-events: none;
+    z-index: 3;
+}
+
+/* Alternating positioning */
+.timeline-item:nth-child(odd) .timeline-content {
+    left: calc(50% + 80px);
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+    right: calc(50% + 80px);
+}
+
+/* Timeline Card */
+.timeline-card {
+    background: linear-gradient(135deg, var(--light-text) 0%, var(--beige) 100%);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0, 86, 59, 0.15);
+    border-left: 4px solid var(--rolex-green);
+    position: relative;
+    overflow: hidden;
+}
+
+.timeline-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 100%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(0, 86, 59, 0.05), transparent);
+    transform: rotate(45deg);
+    transition: all 0.6s ease;
+}
+
+.timeline-card h3 {
+    color: var(--rolex-green);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.timeline-card p {
+    color: var(--dark-text);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.timeline-icon {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 2rem;
+    color: var(--rolex-green);
+    opacity: 0.3;
+}
+
+/* Mostrar contenido cuando el radio está seleccionado */
+.timeline-item input[type="radio"]:checked + .timeline-marker {
+    background: linear-gradient(135deg, var(--rolex-green), var(--rolex-green-light));
+    border-color: var(--beige);
+    transform: scale(1.2);
+    box-shadow: 0 15px 40px rgba(0, 86, 59, 0.4);
+}
+
+.timeline-item input[type="radio"]:checked + .timeline-marker .year {
+    color: var(--light-text);
+}
+
+.timeline-item input[type="radio"]:checked ~ .timeline-content {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.timeline-item input[type="radio"]:checked ~ .timeline-content .timeline-card::before {
+    animation: shimmer 2s ease-in-out;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%) rotate(45deg); }
+    100% { transform: translateX(100%) rotate(45deg); }
+}
+
+/* Gallery Section */
+.gallery-section {
+    max-width: 1200px;
+    margin: 6rem auto;
+    padding: 0 2rem;
+}
+
+.gallery-section h2 {
+    text-align: center;
+    font-size: 3rem;
+    color: var(--dark-text);
+    margin-bottom: 4rem;
+    font-weight: 700;
+}
+
+/* Masonry Gallery */
+.masonry-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-auto-rows: 200px;
+    gap: 1rem;
+    grid-auto-flow: dense;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    box-shadow: 0 8px 25px rgba(0, 86, 59, 0.15);
+}
+
+/* Variaciones de tamaño para efecto masonry */
+.gallery-item.tall {
+    grid-row-end: span 3;
+}
+
+.gallery-item.wide {
+    grid-column-end: span 2;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0, 86, 59, 0.25);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Gallery Overlay */
+.gallery-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 86, 59, 0.9), transparent);
+    color: var(--light-text);
+    padding: 2rem;
+    transform: translateY(100%);
+    transition: transform 0.4s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+    transform: translateY(0);
+}
+
+.gallery-overlay h4 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.gallery-overlay p {
+    margin: 0;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-section p {
+        font-size: 1.1rem;
+    }
+    
+    .timeline-section h2 {
+        font-size: 2rem;
+    }
+    
+    .timeline-container::before {
+        left: 30px;
+    }
+    
+    .timeline-marker {
+        width: 80px;
+        height: 80px;
+        margin-left: 0;
+    }
+    
+    .timeline-marker .year {
+        font-size: 1rem;
+    }
+    
+    .timeline-content {
+        width: calc(100% - 120px);
+        left: 120px !important;
+        right: auto !important;
+    }
+    
+    .timeline-item:nth-child(even) .timeline-content {
+        left: 120px !important;
+    }
+    
+    .masonry-gallery {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 250px;
+    }
+    
+    .gallery-item.wide {
+        grid-column-end: auto;
+    }
+    
+    .gallery-section h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .timeline-content {
+        width: calc(100% - 100px);
+        left: 100px !important;
+    }
+    
+    .timeline-card {
+        padding: 1.5rem;
+    }
+    
+    .timeline-card h3 {
+        font-size: 1.2rem;
+    }
+    
+    .gallery-overlay {
+        padding: 1rem;
+    }
+}

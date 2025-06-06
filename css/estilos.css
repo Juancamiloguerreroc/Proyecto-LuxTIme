@@ -255,7 +255,29 @@ header nav a{
 
 /* Outstanding */
 
+header nav a:hover {
+    color: var(--rolex-green);
+}
 
+
+.btn-catalog{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-catalog button{
+    padding: 1.3rem;
+    background-color: var(--rolex-green-light);
+    border-radius: 15px;
+    color: var(--third-color);
+    transition: all 0.3s ease;
+    margin: none;
+}
+.btn-catalog button:hover{
+    transform: translateY(-15px);
+    box-shadow: 0 0 25px #00563B;
+}
 /* card flip */
 
 :root{
@@ -649,4 +671,8 @@ header nav a{
         97% { transform: translateX(-75%); }
         100% { transform: translateX(0); }
     }
+}
+
+button:hover{
+    cursor: pointer;
 }

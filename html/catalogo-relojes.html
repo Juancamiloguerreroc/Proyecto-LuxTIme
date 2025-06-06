@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuxTime - Catálogo</title>
+    <link rel="stylesheet" href="../css/catalog.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">LuxTime</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="catalog.html" class="active">Catalog</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main class="catalog-container">
+        <div class="catalog-header">
+            <h1>Luxury Watch Collection</h1>
+            <p>Discover our exquisite selection of premium timepieces</p>
+        </div>
+
+        <div class="catalog-controls">
+            <!-- Filtros -->
+            <div class="filters-section">
+                <h3>Filters</h3>
+                
+                <!-- Filtro de Material -->
+                <div class="filter-group">
+                    <h4>Material</h4>
+                    <div class="filter-options">
+                        <input type="radio" id="all-materials" name="material" checked>
+                        <label for="all-materials">All</label>
+                        
+                        <input type="radio" id="steel" name="material">
+                        <label for="steel">Steel</label>
+                        
+                        <input type="radio" id="gold" name="material">
+                        <label for="gold">Gold</label>
+                        
+                        <input type="radio" id="leather" name="material">
+                        <label for="leather">Leather</label>
+                    </div>
+                </div>
+
+                <!-- Filtro de Precio -->
+                <div class="filter-group">
+                    <h4>Price Range</h4>
+                    <div class="price-range">
+                        <div class="price-slider">
+                            <input type="range" id="price-min" min="5000" max="50000" value="5000" class="slider">
+                            <input type="range" id="price-max" min="5000" max="50000" value="50000" class="slider">
+                        </div>
+                        <div class="price-labels">
+                            <span>$5,000</span>
+                            <span>$50,000+</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Filtro de Disponibilidad -->
+                <div class="filter-group">
+                    <h4>Availability</h4>
+                    <div class="filter-options">
+                        <input type="radio" id="all-stock" name="stock" checked>
+                        <label for="all-stock">All</label>
+                        
+                        <input type="radio" id="in-stock" name="stock">
+                        <label for="in-stock">In Stock</label>
+                        
+                        <input type="radio" id="out-stock" name="stock">
+                        <label for="out-stock">Out of Stock</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Controles de Vista -->
+            <div class="view-controls">
+                <div class="view-toggle">
+                    <input type="radio" id="grid-view" name="view" checked>
+                    <label for="grid-view"><i class="fas fa-th-large"></i> Grid</label>
+                    
+                    <input type="radio" id="list-view" name="view">
+                    <label for="list-view"><i class="fas fa-list"></i> List</label>
+                </div>
+                
+                <div class="sort-options">
+                    <select>
+                        <option>Sort by Price</option>
+                        <option>Price: Low to High</option>
+                        <option>Price: High to Low</option>
+                        <option>Name A-Z</option>
+                        <option>Newest First</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Grid de Productos -->
+        <div class="products-grid" id="products-container">
+            
+            <!-- Producto 1 -->
+            <div class="product-card steel in-stock" data-price="10700">
+                <div class="product-image">
+                    <img src="../src/GMT-Master II.png" alt="GMT-Master II">
+                    <div class="product-badge in-stock">In Stock</div>
+                </div>
+                <div class="product-info">
+                    <h3>GMT-Master II</h3>
+                    <p class="product-material">Stainless Steel</p>
+                    <div class="product-price">$10,700</div>
+                    <div class="product-description">
+                        Dual time zone functionality with iconic design
+                    </div>
+                    <button class="add-to-cart">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <!-- Producto 2 -->
+            <div class="product-card gold in-stock" data-price="40000">
+                <div class="product-image">
+                    <img src="../src/golden-daytona.png" alt="Daytona Cosmograph Gold">
+                    <div class="product-badge in-stock">In Stock</div>
+                </div>
+                <div class="product-info">
+                    <h3>Daytona Cosmograph</h3>
+                    <p class="product-material">18k Yellow Gold</p>
+                    <div class="product-price">$40,000</div>
+                    <div class="product-description">
+                        Racing-inspired chronograph in luxurious gold
+                    </div>
+                    <button class="add-to-cart">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <!-- Producto 3 -->
+            <div class="product-card steel in-stock" data-price="9000">
+                <div class="product-image">
+                    <img src="../src/Rolex-submariner.png" alt="Submariner">
+                    <div class="product-badge in-stock">In Stock</div>
+                </div>
+                <div class="product-info">
+                    <h3>Submariner</h3>
+                    <p class="product-material">Stainless Steel</p>
+                    <div class="product-price">$9,000</div>
+                    <div class="product-description">
+                        Professional diving watch with unparalleled durability
+                    </div>
+                    <button class="add-to-cart">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <!-- Producto 4 -->
+            <div class="product-card leather out-stock" data-price="7000">
+                <div class="product-image">
+                    <img src="../src/Datejust.png" alt="Datejust">
+                    <div class="product-badge out-stock">Out of Stock</div>
+                </div>
+                <div class="product-info">
+                    <h3>Datejust</h3>
+                    <p class="product-material">Steel & Leather</p>
+                    <div class="product-price">$7,000</div>
+                    <div class="product-description">
+                        Classic elegance with timeless appeal
+                    </div>
+                    <button class="add-to-cart" disabled>
+                        <i class="fas fa-clock"></i> Out of Stock
+                    </button>
+                </div>
+            </div>
+
+            <!-- Producto 5 -->
+            <div class="product-card gold in-stock" data-price="15000">
+                <div class="product-image">
+                    <img src="../src/Sky-Dweller.png" alt="Sky-Dweller">
+                    <div class="product-badge in-stock">In Stock</div>
+                </div>
+                <div class="product-info">
+                    <h3>Sky-Dweller</h3>
+                    <p class="product-material">Rose Gold</p>
+                    <div class="product-price">$15,000</div>
+                    <div class="product-description">
+                        Annual calendar with dual time zone display
+                    </div>
+                    <button class="add-to-cart">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <!-- Producto 6 -->
+            <div class="product-card steel out-stock" data-price="15100">
+                <div class="product-image">
+                    <img src="../src/cosmograph.png" alt="Cosmograph Daytona">
+                    <div class="product-badge out-stock">Out of Stock</div>
+                </div>
+                <div class="product-info">
+                    <h3>Cosmograph Daytona</h3>
+                    <p class="product-material">Stainless Steel</p>
+                    <div class="product-price">$15,100</div>
+                    <div class="product-description">
+                        Precision chronograph for racing enthusiasts
+                    </div>
+                    <button class="add-to-cart" disabled>
+                        <i class="fas fa-clock"></i> Out of Stock
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>LuxTime</h4>
+                <p>Crafting excellence since 1905</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="">About Us</a>
+                <a href="">Collection</a>
+                <a href="">Services</a>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>info@luxtime.com</p>
+                <p>+1 (555) 123-4567</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
