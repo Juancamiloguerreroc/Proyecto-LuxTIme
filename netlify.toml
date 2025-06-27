@@ -1,8 +1,8 @@
 [build]
-  publish = "html"
+  publish = "."
   command = ""
 
 [[redirects]]
   from = "/*"
-  to = "/index.html"
+  to = "/html/index.html"
   status = 200
